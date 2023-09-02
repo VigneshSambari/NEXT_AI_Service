@@ -18,6 +18,7 @@ import { Empty } from "@/components/ui/empty";
 
 
 import { formSchema } from "./constants";
+import { toast } from "react-hot-toast";
 
 const VideoPage = () => {
   const router = useRouter();
@@ -45,7 +46,7 @@ const VideoPage = () => {
       if (error?.response?.status === 403) {
 
       } else {
-      
+        toast.error("Something went wrong.");
       }
     } finally {
       router.refresh();

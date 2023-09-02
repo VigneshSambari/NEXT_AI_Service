@@ -20,6 +20,7 @@ import { Empty } from "@/components/ui/empty";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 import { amountOptions, formSchema, resolutionOptions } from "./constants";
+import { toast } from "react-hot-toast";
 
 const PhotoPage = () => {
 
@@ -50,7 +51,7 @@ const PhotoPage = () => {
       if (error?.response?.status === 403) {
 
       } else {
- 
+        toast.error("Something went wrong.");
       }
     } finally {
       router.refresh();

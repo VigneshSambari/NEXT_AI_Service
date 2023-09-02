@@ -23,6 +23,7 @@ import { Empty } from "@/components/ui/empty";
 
 
 import { formSchema } from "./constants";
+import { toast } from "react-hot-toast";
 
 const CodePage = () => {
   const router = useRouter();
@@ -51,7 +52,7 @@ const CodePage = () => {
       if (error?.response?.status === 403) {
 
       } else {
-      
+        toast.error("Something went wrong.");
       }
     } finally {
       router.refresh();
